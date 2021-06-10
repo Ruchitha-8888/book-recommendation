@@ -161,8 +161,8 @@ def register():
         return render_template('register.html')
 
 # sign-in page
-@app.route('/signin', methods=["GET", "POST"])
-def signin():
+@app.route('/sign-in', methods=["GET", "POST"])
+def sign_in():
     if request.method == 'POST':
         username_entered = request.form['username']
         password_entered = request.form['password']
@@ -176,8 +176,8 @@ def signin():
         return render_template('signin.html')
 
 # sign-out page
-@app.route('/signout', methods=["GET", "POST"])
-def signout():
+@app.route('/sign-out', methods=["GET", "POST"])
+def sign_out():
     if request.method == 'POST':
         session.pop('username', None)
         return redirect(url_for('sign_in'))
@@ -185,8 +185,8 @@ def signout():
         return render_template('signout.html')
 
 # loads the user profile
-@app.route('/profile', methods=['GET', 'POST'])
-def profile():
+@app.route('/get-profile', methods=['GET', 'POST'])
+def get_profile():
     if request.method == 'GET':
         userid = user_id(session.get('username'))
         username = session.get('username')
