@@ -161,7 +161,7 @@ def register():
         return render_template('register.html')
 
 # sign-in page
-@app.route('/sign_in', methods=["GET", "POST"])
+@app.route('/sign-in', methods=["GET", "POST"])
 def sign_in():
     if request.method == 'POST':
         username_entered = request.form['username']
@@ -176,7 +176,7 @@ def sign_in():
         return render_template('signin.html')
 
 # sign-out page
-@app.route('/sign_out', methods=["GET", "POST"])
+@app.route('/sign-out', methods=["GET", "POST"])
 def sign_out():
     if request.method == 'POST':
         session.pop('username', None)
